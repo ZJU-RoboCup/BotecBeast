@@ -53,7 +53,7 @@ class CPWalking5 {
     STOP,
   } footprintStatus;
 
-  struct Footprint({)
+  struct Footprint{
     Eigen::Matrix<double, 5, 3> fPrint;
     double sT;
     FootprintStatus fprintStatus;
@@ -322,8 +322,8 @@ class CPWalking5 {
   Eigen::VectorXd
       jointVal;  // lowpass the jointValue command for openloopController
 
-  Footprint(lastfpStruct;)
-  Footprint(currentfpStruct;)
+  Footprint lastfpStruct;
+  Footprint currentfpStruct;
 
   std_msgs::Bool reqGaitCommand;
   ros::Publisher reqGaitCommand_pub;
