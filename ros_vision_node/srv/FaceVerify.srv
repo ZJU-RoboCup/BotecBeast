@@ -1,0 +1,5 @@
+string faceId1
+string faceId2
+---
+int16 result
+float32 confidence

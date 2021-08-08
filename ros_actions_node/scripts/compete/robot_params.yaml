@@ -1,0 +1,19 @@
+
+ROBOT_CENTER_X: 280
+
+# 镂空区和独木桥区绿色最大和最小 x 值
+GREEN_MAX_X: 163
+GREEN_MIN_X: 105
+
+# 可跨越的最低像素宽度
+GO_MIN_WIDTH: 300
+
+ROBOT_CENTER_DIFF: 20
+
+LANDMINE_MAX_Y: 265
+
+WALL_MAX_X: 376
+WALL_MIN_X: 174
+
+# 左脚的中心点坐标
+LEFT_LEG_CENTER: 217

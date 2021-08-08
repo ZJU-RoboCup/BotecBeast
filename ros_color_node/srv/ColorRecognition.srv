@@ -1,0 +1,6 @@
+string color_type
+int64[3] color_param
+---
+float64[2] center
+float64 area
+string region

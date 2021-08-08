@@ -1,0 +1,33 @@
+<launch>
+  <group ns="camera">
+    <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+
+      <arg name="enable_pointcloud"        value="false"/>
+
+      <arg name="depth_width"              value="640"/>
+      <arg name="depth_height"             value="480"/>
+      <arg name="enable_depth"             value="true"/>
+
+      <arg name="color_width"              value="640"/>
+      <arg name="color_height"             value="480"/>
+      <arg name="enable_color"             value="true"/>
+
+      <arg name="infra_width"              value="640"/>
+      <arg name="infra_height"             value="480"/>
+      <arg name="enable_infra1"            value="false"/>
+      <arg name="enable_infra2"            value="false"/>
+
+    </include>
+  </group>
+
+  <node name="chin_camera" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/usb_cam" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="480" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="camera_frame_id" value="chin_camera" />
+    <param name="io_method" value="mmap"/>
+    <remap from="/chin_camera/image_raw" to="/chin_camera/image" />
+  </node>
+
+</launch>

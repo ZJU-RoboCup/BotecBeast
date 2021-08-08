@@ -1,0 +1,6 @@
+string language
+string gender
+string text
+---
+string errorMsg
+string filepath

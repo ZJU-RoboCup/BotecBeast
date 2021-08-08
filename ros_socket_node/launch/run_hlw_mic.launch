@@ -1,0 +1,45 @@
+<launch>
+    <param name = "masterID"            value = "2" />
+    <param name = "poseOffsetPath"      value = "/home/lemon/.lejuconfig/offset.yaml" />
+    <param name = "poseInitPath"        value = "$(find bodyhub)/config/dxlInitPose.yaml" />
+    <param name = "sensorNameIDPath"    value = "$(find bodyhub)/config/sensorNameID.yaml" />
+    <param name = "is_hlw_mic"          value = "true" />
+
+
+    <include file="$(find ros_socket_node)/launch/camera.launch"/>
+
+    <!-- <node pkg="bodyhub" type="BodyHubNode" name="BodyHubNode" output="screen" /> -->
+
+    <!-- <node pkg="actexecpackage" type="ActExecPackageNode.py" name="ActExecPackageNode" output="screen" /> -->
+
+    <node pkg="ros_broadcast_node" type="broadcast.py" name="ros_broadcast_node" output="screen" />
+
+    <node pkg="ros_socket_node" type="transfer.py" name="ros_socket_node" output="screen" />
+
+    <node pkg="ros_speech_node" type="baidu_services_node.py" name="ros_speech_node" output="screen" />
+
+    <node pkg="ros_mic_arrays" type="ros_mic_arrays_node" name="ros_mic_arrays" output="screen" />
+
+    <node pkg="ros_color_node" type="color_node.py" name="ros_color_node" output="screen" />
+
+    <node pkg="ros_msg_node" type="msg_node.py" name="ros_msg_node" output="screen" />
+
+    <node pkg="web_video_server" type="web_video_server" name="web_video_server" output="screen" />
+
+    <node pkg="ros_gesture_node" type="gesture_node.py" name="ros_gesture_node" output="screen" />
+
+    <node pkg="sensorhub" type="SensorHubNode.py" name="SensorHubNode" output="screen" />
+
+    <node pkg="joystick_handle" type="joystick_handle_node" name="joystick_handle_node" output="screen" />
+
+    <node pkg="ros_face_node" type="facedetect_node.py" name="ros_face_node" output="screen" />
+
+    <node pkg="ros_fruit_node" type="fruit_node.py" name="ros_fruit_node" output="screen" />
+
+    <!-- <node pkg="ros_dance_node" type="dance_node.py" name="ros_dance_node" output="screen" /> -->
+
+    <node pkg="ros_label_node" type="camera_label.py" name="ros_label_node" output="screen" />
+
+    <node pkg="ik_module" type="ik_module_node" name="ik_module_node" output="screen" />
+
+</launch>

@@ -1,0 +1,5 @@
+.vscode/*
+githooks/*
+clang-format-all
+.clang-format
+

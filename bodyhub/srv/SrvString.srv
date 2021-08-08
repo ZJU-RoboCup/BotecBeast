@@ -1,0 +1,5 @@
+string str
+---
+string data
+uint32 poseQueueSize
+uint32 jointQueueSize

@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="ros_evs_node" type="dialog.py" name="ros_evs_node" output="screen" >
+        <param name="config_path" value="/home/lemon/.lejuconfig/iflyos_config.json"/>
+        <param name="token_path" value="/home/lemon/.lejuconfig/iflyos_token.json"/>
+    </node>
+    <node pkg="ros_evs_node" type="voice_control.py" name="voice_control" output="screen" >
+    </node>
+</launch>

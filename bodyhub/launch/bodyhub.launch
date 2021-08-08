@@ -1,0 +1,19 @@
+<launch>
+    <group>
+        <!-- arg param -->
+        <arg name = "sim" default = "false" />
+        <arg name = "norobotstand" default = "false" />
+        <!-- simulation param -->
+        <param if="$(arg sim)" name="simenable" value="true" />
+        <param unless="$(arg sim)" name="simenable" value="false" />
+        <param if="$(arg norobotstand)" name="setnostand" value="true" />
+        <param unless="$(arg norobotstand)" name="setnostand" value="false" />
+        <!-- config files path -->
+        <param name = "packOffsetFile"      value = "$(find bodyhub)/config/offset.yaml" />
+        <param name = "poseOffsetPath"      value = "/home/lemon/.lejuconfig/offset.yaml" />
+        <param name = "poseInitPath"        value = "$(find bodyhub)/config/dxlInitPose.yaml" />
+        <param name = "sensorNameIDPath"    value = "$(find bodyhub)/config/sensorNameID.yaml" />
+        <!-- BodyHubNode -->
+        <node pkg="bodyhub" type="BodyHubNode" name="BodyHubNode" output="screen" />
+    </group>
+</launch>
